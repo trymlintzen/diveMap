@@ -8,10 +8,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     var diveItemsObjects: [DiveMapItems] = []
+    var locationManager = CLLocationManager()
+    let droppedPin = MKPointAnnotation()
 
     var lastCoordinateTouched = CLLocationCoordinate2D()
     @IBOutlet weak var mapViewOutlet: MKMapView!
@@ -20,14 +23,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         mapViewOutlet.showsUserLocation = true
         mapViewOutlet.delegate = self
+        locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(MapViewController.notifyObservers(notification:)),
                                                name: NSNotification.Name(rawValue: notificationIDs.diveItemID),
                                                object: nil)
-        lastCoordinateTouched = CLLocationCoordinate2D.init(latitude: 47.6031537682643, longitude: -122.336164712906)
-        setZoomInitialLocation(location: lastCoordinateTouched)
-        DiveMapService.sharedInstance.getDiveMapInfo(lat: 47.6031537682643, lng: -122.336164712906, dist: 25)
+      
+
         
        
         
@@ -37,18 +41,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
   
     @IBAction func LongPressLocation(_ sender: UILongPressGestureRecognizer) {
-        if sender.state != UIGestureRecognizerState.began { return }
+        guard sender.state == .began else { return }
         
         let touchLocation = sender.location(in: self.mapViewOutlet)
         let touchedCoordinate = mapViewOutlet.convert(touchLocation, toCoordinateFrom: self.mapViewOutlet)
         
         // create an annotion point
-        let droppedPin = MKPointAnnotation()
+//        self.mapViewOutlet.removeAnnotation(self.droppedPin)
         droppedPin.title = "Dropped Pin"
         droppedPin.coordinate = touchedCoordinate
         
         // creat pin view change colour
-        let droppedPinView = MKAnnotationView.init(annotation: droppedPin, reuseIdentifier: "pin")
+        let droppedPinView = MKAnnotationView.init(annotation: droppedPin, reuseIdentifier: "droppedPin")
         droppedPinView.tintColor = UIColor.cyan
        
         // add the annotation that bleongs to the pin view in the map
@@ -57,7 +61,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         DiveMapService.sharedInstance.getDiveMapInfo(lat: touchedCoordinate.latitude,
                                                      lng: touchedCoordinate.longitude,
                                                      dist: 25)
-        
+        setZoomInitialLocation(location: touchedCoordinate)
     }
     
     func setZoomInitialLocation(location: CLLocationCoordinate2D) {
@@ -74,17 +78,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var DiveItemDict = notification.userInfo as! Dictionary<String , [DiveMapItems]>
         diveItemsObjects = DiveItemDict[dictKey.diveItemKey]!
         
+        var annotations: [MKPointAnnotation] = []
         for site in diveItemsObjects {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D.init(latitude: site.lat,
                                                                 longitude: site.lng)
             annotation.title = site.name
-            self.mapViewOutlet.showAnnotations([annotation], animated: true)
-            
+            annotations.append(annotation)
         }
-        
-//        refresh.endRefreshing()
-//        self.hideActivityIndicator(loadingView: loadingView, spinner: spinner)
+        self.mapViewOutlet.showAnnotations(annotations, animated: true)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,6 +101,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             return nil
         }
         if let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin") {
+            return pinView
+        } else if let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "droppedPin") {
             return pinView
         } else {
             let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
