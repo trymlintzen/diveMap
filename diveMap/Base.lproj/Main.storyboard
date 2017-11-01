@@ -36,6 +36,7 @@
                     </view>
                     <connections>
                         <outlet property="mapViewOutlet" destination="xTf-QB-Bfo" id="h3v-1y-5Ee"/>
+                        <segue destination="Rpl-tm-nsk" kind="show" identifier="pinSegue" id="6q8-oh-ThM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -46,6 +47,21 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="P3C-cD-bWN">
+            <objects>
+                <viewController id="Rpl-tm-nsk" customClass="DetailViewController" customModule="diveMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Sj-xl-Ao5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JJL-fM-9pu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJI-UL-GgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739" y="134"/>
         </scene>
     </scenes>
 </document>

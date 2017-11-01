@@ -15,7 +15,9 @@ class DiveMapService {
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
     
-    
+    func diveSearchDetail(id: String) {
+        //http://api.divesites.com/?mode=detail&siteid=17559
+    }
     
     func getDiveMapInfo(lat: Double, lng: Double, dist: Double)  {
         

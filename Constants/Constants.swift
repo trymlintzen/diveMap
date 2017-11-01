@@ -18,3 +18,7 @@ struct dictKey {
 struct urls {
     static let baseURL = "http://api.divesites.com/"
 }
+
+struct segues {
+    static let pinSegue = "pinSegue"
+}

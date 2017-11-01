@@ -78,12 +78,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var DiveItemDict = notification.userInfo as! Dictionary<String , [DiveMapItems]>
         diveItemsObjects = DiveItemDict[dictKey.diveItemKey]!
         
-        var annotations: [MKPointAnnotation] = []
+        var annotations: [DiveMapAnnotation] = []
         for site in diveItemsObjects {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D.init(latitude: site.lat,
+        
+            let coordinate = CLLocationCoordinate2D.init(latitude: site.lat,
                                                                 longitude: site.lng)
-            annotation.title = site.name
+            let annotation = DiveMapAnnotation.init(diveSite: site,
+                                                    coordinate: coordinate,
+                                                    title: site.name)
             annotations.append(annotation)
         }
         self.mapViewOutlet.showAnnotations(annotations, animated: true)
@@ -107,13 +109,20 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         } else {
             let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
             pinView.pinTintColor = UIColor.blue
+            pinView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
             pinView.canShowCallout = true
             pinView.animatesDrop = true
             return pinView
         }
     }
     
-    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Hier schrijf je wat moet geproberen als er op "i" geklikt wordt
+        
+        performSegue(withIdentifier: segues.pinSegue , sender: self)
+        
+        
+    }
     
 }
 

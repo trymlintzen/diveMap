@@ -7,6 +7,18 @@
 //
 
 import Foundation
+import MapKit
 
-//class DiveMapAnnotation
+class DiveMapAnnotation: NSObject, MKAnnotation {
+    var diveSite: DiveMapItems
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    
+    init(diveSite: DiveMapItems, coordinate: CLLocationCoordinate2D, title: String ) {
+        self.coordinate = coordinate
+        self.diveSite = diveSite
+        self.title = title
+    }
+    
+}
 
