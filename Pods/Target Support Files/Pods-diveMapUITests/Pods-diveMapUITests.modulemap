@@ -1,0 +1,6 @@
+framework module Pods_diveMapUITests {
+  umbrella header "Pods-diveMapUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

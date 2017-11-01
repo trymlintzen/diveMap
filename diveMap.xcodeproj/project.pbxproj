@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12BD1EA9A93039479BF7F2E4 /* Pods_diveMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECA5B7873FDC7DCCFB4A6C5 /* Pods_diveMapTests.framework */; };
 		811409801FA9CEA6008217E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114097F1FA9CEA6008217E7 /* AppDelegate.swift */; };
-		811409821FA9CEA6008217E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409811FA9CEA6008217E7 /* ViewController.swift */; };
+		811409821FA9CEA6008217E7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409811FA9CEA6008217E7 /* MapViewController.swift */; };
 		811409851FA9CEA6008217E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811409831FA9CEA6008217E7 /* Main.storyboard */; };
 		811409871FA9CEA6008217E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811409861FA9CEA6008217E7 /* Assets.xcassets */; };
 		8114098A1FA9CEA6008217E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811409881FA9CEA6008217E7 /* LaunchScreen.storyboard */; };
 		811409951FA9CEA6008217E7 /* diveMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409941FA9CEA6008217E7 /* diveMapTests.swift */; };
 		811409A01FA9CEA6008217E7 /* diveMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114099F1FA9CEA6008217E7 /* diveMapUITests.swift */; };
 		811409AF1FA9D600008217E7 /* DiveMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409AE1FA9D600008217E7 /* DiveMapService.swift */; };
+		811409B11FA9D8ED008217E7 /* DiveMapItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409B01FA9D8ED008217E7 /* DiveMapItems.swift */; };
+		811409B41FA9DB56008217E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409B31FA9DB56008217E7 /* Constants.swift */; };
+		811409B61FA9E184008217E7 /* DiveMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409B51FA9E184008217E7 /* DiveMapAnnotation.swift */; };
+		B1435C31848983EBAD5E2534 /* Pods_diveMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE929B6BAE2EA1707A21FCDB /* Pods_diveMapUITests.framework */; };
+		DD7A89A749258F6F0FC0F437 /* Pods_diveMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5F10C5878DDC0F8965C636 /* Pods_diveMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A5F10C5878DDC0F8965C636 /* Pods_diveMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_diveMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18759F8FAB4C6BF4A35C00CE /* Pods-diveMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diveMapTests/Pods-diveMapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2ECA5B7873FDC7DCCFB4A6C5 /* Pods_diveMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_diveMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A2C7FE9088BCC86CEDE9B7 /* Pods-diveMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-diveMapUITests/Pods-diveMapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78887A6FEA56B1DA7C86A710 /* Pods-diveMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diveMapUITests/Pods-diveMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8114097C1FA9CEA6008217E7 /* diveMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diveMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8114097F1FA9CEA6008217E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		811409811FA9CEA6008217E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		811409811FA9CEA6008217E7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		811409841FA9CEA6008217E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		811409861FA9CEA6008217E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		811409891FA9CEA6008217E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +60,13 @@
 		8114099F1FA9CEA6008217E7 /* diveMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diveMapUITests.swift; sourceTree = "<group>"; };
 		811409A11FA9CEA6008217E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811409AE1FA9D600008217E7 /* DiveMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapService.swift; sourceTree = "<group>"; };
+		811409B01FA9D8ED008217E7 /* DiveMapItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapItems.swift; sourceTree = "<group>"; };
+		811409B31FA9DB56008217E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		811409B51FA9E184008217E7 /* DiveMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapAnnotation.swift; sourceTree = "<group>"; };
+		8D5B62518D4B3536DC65DA25 /* Pods-diveMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-diveMap/Pods-diveMap.release.xcconfig"; sourceTree = "<group>"; };
+		9CA87D246FD3DC1E57784C50 /* Pods-diveMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-diveMapTests/Pods-diveMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		ABF857083F1AC736220D2F5B /* Pods-diveMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diveMap/Pods-diveMap.debug.xcconfig"; sourceTree = "<group>"; };
+		DE929B6BAE2EA1707A21FCDB /* Pods_diveMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_diveMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7A89A749258F6F0FC0F437 /* Pods_diveMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12BD1EA9A93039479BF7F2E4 /* Pods_diveMapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,20 +90,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1435C31848983EBAD5E2534 /* Pods_diveMapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1799AFA6E670A1EB591F3314 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABF857083F1AC736220D2F5B /* Pods-diveMap.debug.xcconfig */,
+				8D5B62518D4B3536DC65DA25 /* Pods-diveMap.release.xcconfig */,
+				18759F8FAB4C6BF4A35C00CE /* Pods-diveMapTests.debug.xcconfig */,
+				9CA87D246FD3DC1E57784C50 /* Pods-diveMapTests.release.xcconfig */,
+				78887A6FEA56B1DA7C86A710 /* Pods-diveMapUITests.debug.xcconfig */,
+				40A2C7FE9088BCC86CEDE9B7 /* Pods-diveMapUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		568680262C319A02B4DE245C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A5F10C5878DDC0F8965C636 /* Pods_diveMap.framework */,
+				2ECA5B7873FDC7DCCFB4A6C5 /* Pods_diveMapTests.framework */,
+				DE929B6BAE2EA1707A21FCDB /* Pods_diveMapUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		811409731FA9CEA6008217E7 = {
 			isa = PBXGroup;
 			children = (
+				811409B21FA9DB45008217E7 /* Constants */,
 				811409AD1FA9D5DD008217E7 /* DataLayer */,
 				8114097E1FA9CEA6008217E7 /* diveMap */,
 				811409931FA9CEA6008217E7 /* diveMapTests */,
 				8114099E1FA9CEA6008217E7 /* diveMapUITests */,
 				8114097D1FA9CEA6008217E7 /* Products */,
+				1799AFA6E670A1EB591F3314 /* Pods */,
+				568680262C319A02B4DE245C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +148,12 @@
 			isa = PBXGroup;
 			children = (
 				8114097F1FA9CEA6008217E7 /* AppDelegate.swift */,
-				811409811FA9CEA6008217E7 /* ViewController.swift */,
+				811409811FA9CEA6008217E7 /* MapViewController.swift */,
 				811409831FA9CEA6008217E7 /* Main.storyboard */,
 				811409861FA9CEA6008217E7 /* Assets.xcassets */,
 				811409881FA9CEA6008217E7 /* LaunchScreen.storyboard */,
 				8114098B1FA9CEA6008217E7 /* Info.plist */,
+				811409B51FA9E184008217E7 /* DiveMapAnnotation.swift */,
 			);
 			path = diveMap;
 			sourceTree = "<group>";
@@ -132,8 +180,17 @@
 			isa = PBXGroup;
 			children = (
 				811409AE1FA9D600008217E7 /* DiveMapService.swift */,
+				811409B01FA9D8ED008217E7 /* DiveMapItems.swift */,
 			);
 			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		811409B21FA9DB45008217E7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				811409B31FA9DB56008217E7 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 811409A41FA9CEA6008217E7 /* Build configuration list for PBXNativeTarget "diveMap" */;
 			buildPhases = (
+				5F41D141E143BF4FA635020C /* [CP] Check Pods Manifest.lock */,
 				811409781FA9CEA6008217E7 /* Sources */,
 				811409791FA9CEA6008217E7 /* Frameworks */,
 				8114097A1FA9CEA6008217E7 /* Resources */,
+				FB9780089AAD73A2D0D57D35 /* [CP] Embed Pods Frameworks */,
+				A1166ED44EC8E006942417F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 811409A71FA9CEA6008217E7 /* Build configuration list for PBXNativeTarget "diveMapTests" */;
 			buildPhases = (
+				2095D5FA445C5CD219DC9389 /* [CP] Check Pods Manifest.lock */,
 				8114098C1FA9CEA6008217E7 /* Sources */,
 				8114098D1FA9CEA6008217E7 /* Frameworks */,
 				8114098E1FA9CEA6008217E7 /* Resources */,
+				AFD6FCC57A6DB9B15AAAD7E8 /* [CP] Embed Pods Frameworks */,
+				428A3AC1D128A6FC5355CF20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 811409AA1FA9CEA6008217E7 /* Build configuration list for PBXNativeTarget "diveMapUITests" */;
 			buildPhases = (
+				9A664EBCF6C9FBCC4FA71E1C /* [CP] Check Pods Manifest.lock */,
 				811409971FA9CEA6008217E7 /* Sources */,
 				811409981FA9CEA6008217E7 /* Frameworks */,
 				811409991FA9CEA6008217E7 /* Resources */,
+				3399FE056097C4977227FCEC /* [CP] Embed Pods Frameworks */,
+				5C6A71C49168872848E63742 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,12 +331,165 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2095D5FA445C5CD219DC9389 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-diveMapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3399FE056097C4977227FCEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-diveMapUITests/Pods-diveMapUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		428A3AC1D128A6FC5355CF20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-diveMapTests/Pods-diveMapTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C6A71C49168872848E63742 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-diveMapUITests/Pods-diveMapUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F41D141E143BF4FA635020C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-diveMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A664EBCF6C9FBCC4FA71E1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-diveMapUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1166ED44EC8E006942417F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-diveMap/Pods-diveMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFD6FCC57A6DB9B15AAAD7E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-diveMapTests/Pods-diveMapTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB9780089AAD73A2D0D57D35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-diveMap/Pods-diveMap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-diveMap/Pods-diveMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		811409781FA9CEA6008217E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				811409821FA9CEA6008217E7 /* ViewController.swift in Sources */,
+				811409B41FA9DB56008217E7 /* Constants.swift in Sources */,
+				811409821FA9CEA6008217E7 /* MapViewController.swift in Sources */,
+				811409B11FA9D8ED008217E7 /* DiveMapItems.swift in Sources */,
+				811409B61FA9E184008217E7 /* DiveMapAnnotation.swift in Sources */,
 				811409801FA9CEA6008217E7 /* AppDelegate.swift in Sources */,
 				811409AF1FA9D600008217E7 /* DiveMapService.swift in Sources */,
 			);
@@ -436,6 +655,7 @@
 		};
 		811409A51FA9CEA6008217E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABF857083F1AC736220D2F5B /* Pods-diveMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -451,6 +671,7 @@
 		};
 		811409A61FA9CEA6008217E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D5B62518D4B3536DC65DA25 /* Pods-diveMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +687,7 @@
 		};
 		811409A81FA9CEA6008217E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18759F8FAB4C6BF4A35C00CE /* Pods-diveMapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -483,6 +705,7 @@
 		};
 		811409A91FA9CEA6008217E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CA87D246FD3DC1E57784C50 /* Pods-diveMapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -500,6 +723,7 @@
 		};
 		811409AB1FA9CEA6008217E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78887A6FEA56B1DA7C86A710 /* Pods-diveMapUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,6 +740,7 @@
 		};
 		811409AC1FA9CEA6008217E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A2C7FE9088BCC86CEDE9B7 /* Pods-diveMapUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
