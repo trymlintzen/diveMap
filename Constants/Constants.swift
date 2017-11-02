@@ -10,10 +10,12 @@ import Foundation
 
 struct notificationIDs {
     static let diveItemID = "diveItemID"
+    static let urlItemID = "urlItemID"
 }
 
 struct dictKey {
     static let diveItemKey = "data"
+    static let diveURLKey = "URLData"
 }
 struct urls {
     static let baseURL = "http://api.divesites.com/"
@@ -21,4 +23,8 @@ struct urls {
 
 struct segues {
     static let pinSegue = "pinSegue"
+}
+
+struct distances {
+    static let distance25 = 25.0
 }
