@@ -62,4 +62,22 @@ class DiveMapService {
                                         userInfo: [dictKey.diveItemKey : diveItems])
     }
     
+    func getDetailData (result: NSDictionary) {
+        if let url = result["urls"] as? NSArray {
+            for oneUrl in url {
+                if let dict = oneUrl as? NSDictionary,
+                    let url = dict["url"] as? String {
+                    if let urlNSURL = NSURL(url) {
+                        let diveMapObject = DiveMapItems.init( url: urlNSURL)
+                        diveItems.append(diveMapObject)
+                    }
+                }
+            }
+        }
+        
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationIDs.diveItemID),
+                                        object: self,
+                                        userInfo: [dictKey.diveItemKey : diveItems])
+    
 }

@@ -14,7 +14,7 @@ class DiveMapItems {
     var lng: Double
     var id : String
     var name: String
-  
+
     init(lat: Double, lng: Double, id: String, name: String) {
         self.lat = lat
         self.lng = lng
