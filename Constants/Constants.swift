@@ -24,3 +24,7 @@ struct urls {
 struct segues {
     static let pinSegue = "pinSegue"
 }
+
+struct distances {
+    static let distance25 = 25.0
+}

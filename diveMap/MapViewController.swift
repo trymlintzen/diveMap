@@ -51,7 +51,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let touchedCoordinate = mapViewOutlet.convert(touchLocation, toCoordinateFrom: self.mapViewOutlet)
         
         // create an annotion point
-        //        self.mapViewOutlet.removeAnnotation(self.droppedPin)
         droppedPin.title = "Dropped Pin"
         droppedPin.coordinate = touchedCoordinate
         
@@ -64,13 +63,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         DiveMapService.sharedInstance.getDiveMapInfo(lat: touchedCoordinate.latitude,
                                                      lng: touchedCoordinate.longitude,
-                                                     dist: 25)
+                                                     dist: distances.distance25)
         setZoomInitialLocation(location: touchedCoordinate)
     }
     
     func setZoomInitialLocation(location: CLLocationCoordinate2D) {
-        //        let currentLocation = CLLocationCoordinate2D.init(latitude: 47.6031537682643, longitude: -122.336164712906 )
-        let regionRadius : CLLocationDistance = 25
+        let regionRadius : CLLocationDistance = distances.distance25
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location,
                                                                   regionRadius * 2.0,
                                                                   regionRadius * 2.0)

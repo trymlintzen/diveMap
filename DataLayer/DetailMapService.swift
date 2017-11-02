@@ -17,10 +17,6 @@ class DetailDiveSiteMapService {
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
     
-    //    func diveSearchDetail(id: String) {
-    //        //http://api.divesites.com/?mode=detail&siteid=17559
-    //    }
-    
     
     func diveSearchDetail(id: String)  {
         
@@ -48,7 +44,7 @@ class DetailDiveSiteMapService {
                     //                if let urlNSURL = NSURL(url) {
                     urlObject = url
             }
-            var detailDiveSite = DetailDiveSite.init(url: urlObject)
+            let detailDiveSite = DetailDiveSite.init(url: urlObject)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationIDs.urlItemID),
                                             object: self,
                                             userInfo: [dictKey.diveURLKey : detailDiveSite])
