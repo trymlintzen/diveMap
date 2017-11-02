@@ -11,11 +11,13 @@ import Foundation
 struct notificationIDs {
     static let diveItemID = "diveItemID"
     static let urlItemID = "urlItemID"
+    static let tableResultID = "tableResultID"
 }
 
 struct dictKey {
     static let diveItemKey = "data"
     static let diveURLKey = "URLData"
+    static let diveResultTable = "diveResultTable"
 }
 struct urls {
     static let baseURL = "http://api.divesites.com/"

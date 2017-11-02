@@ -9,13 +9,28 @@
 import UIKit
 import MapKit
 import CoreLocation
+import UIKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+protocol MapSearch {
+    func showDiveSiteSelected(diveSite: DiveMapItems)
+}
+
+
+class MapViewController: UIViewController, MKMapViewDelegate, MapSearch {
     
+    func showDiveSiteSelected(diveSite: DiveMapItems) {
+        var coord = CLLocationCoordinate2D.init(latitude: diveSite.lat,
+                                                longitude: diveSite.lng)
+        self.setZoomInitialLocation(location: coord)
+    }
+
     var diveItemsObjects: [DiveMapItems] = []
     var selectedDetailItem: DetailDiveSite?
     var locationManager = CLLocationManager()
     let droppedPin = MKPointAnnotation()
+    var searchController: UISearchController!
+    var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    var loadingView: UIView = UIView()
     
     var lastCoordinateTouched = CLLocationCoordinate2D()
     @IBOutlet weak var mapViewOutlet: MKMapView!
@@ -26,6 +41,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapViewOutlet.delegate = self
         locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
+        setUPSearchBar()
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(MapViewController.notifyObservers(notification:)),
@@ -143,6 +159,32 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             DetailDiveSiteMapService.sharedInstance.diveSearchDetail(id: mapAnnotation.diveSite.id)
         }
     }
+   
+    func setUPSearchBar () {
+        let diveSearchTable = self.storyboard!.instantiateViewController(withIdentifier: "diveSearchID") as! SearchTableViewController
+        diveSearchTable.delegate = self
+        self.searchController = UISearchController.init(searchResultsController: diveSearchTable)
+        self.searchController.searchBar.delegate = diveSearchTable
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        self.definesPresentationContext = true
+        navigationItem.titleView = searchController?.searchBar
+    }
+    
+//    func isMoreThanTwoCharacter(_ searchBar: UISearchBar) -> Bool {
+//        return (searchBar.text?.characters.count)! >= 4
+//    }
+//
+//
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if isMoreThanTwoCharacter(searchBar) {
+//            self.diveItemsObjects = []
+//            DiveMapService.sharedInstance.searchDiveMap(searchString: searchBar.text!)
+//            self.showActivityIndicator(loadingView: loadingView, spinner: spinner)
+//        }
+//    }
+    
+
     
 }
 

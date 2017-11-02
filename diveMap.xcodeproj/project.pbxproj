@@ -24,6 +24,7 @@
 		811409BC1FAB1AAB008217E7 /* DetailDiveSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409BB1FAB1AAB008217E7 /* DetailDiveSite.swift */; };
 		811409BE1FAB1AF8008217E7 /* DetailMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811409BD1FAB1AF8008217E7 /* DetailMapService.swift */; };
 		817572821FAB559800BF3D24 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572811FAB559800BF3D24 /* UIViewControllerExtension.swift */; };
+		817572851FAB7E4F00BF3D24 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572831FAB7E4F00BF3D24 /* SearchTableViewController.swift */; };
 		B1435C31848983EBAD5E2534 /* Pods_diveMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE929B6BAE2EA1707A21FCDB /* Pods_diveMapUITests.framework */; };
 		DD7A89A749258F6F0FC0F437 /* Pods_diveMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5F10C5878DDC0F8965C636 /* Pods_diveMap.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		811409BB1FAB1AAB008217E7 /* DetailDiveSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiveSite.swift; sourceTree = "<group>"; };
 		811409BD1FAB1AF8008217E7 /* DetailMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapService.swift; sourceTree = "<group>"; };
 		817572811FAB559800BF3D24 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		817572831FAB7E4F00BF3D24 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		8D5B62518D4B3536DC65DA25 /* Pods-diveMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-diveMap/Pods-diveMap.release.xcconfig"; sourceTree = "<group>"; };
 		9CA87D246FD3DC1E57784C50 /* Pods-diveMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-diveMapTests/Pods-diveMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		ABF857083F1AC736220D2F5B /* Pods-diveMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diveMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-diveMap/Pods-diveMap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				811409B71FAA150C008217E7 /* viewControllerLocationManager.swift */,
 				811409B91FAA33D2008217E7 /* DetailViewController.swift */,
 				811409831FA9CEA6008217E7 /* Main.storyboard */,
+				817572831FAB7E4F00BF3D24 /* SearchTableViewController.swift */,
 				811409861FA9CEA6008217E7 /* Assets.xcassets */,
 				811409881FA9CEA6008217E7 /* LaunchScreen.storyboard */,
 				8114098B1FA9CEA6008217E7 /* Info.plist */,
@@ -524,6 +527,7 @@
 				811409BC1FAB1AAB008217E7 /* DetailDiveSite.swift in Sources */,
 				811409B11FA9D8ED008217E7 /* DiveMapItems.swift in Sources */,
 				811409B61FA9E184008217E7 /* DiveMapAnnotation.swift in Sources */,
+				817572851FAB7E4F00BF3D24 /* SearchTableViewController.swift in Sources */,
 				811409801FA9CEA6008217E7 /* AppDelegate.swift in Sources */,
 				811409AF1FA9D600008217E7 /* DiveMapService.swift in Sources */,
 				811409BA1FAA33D2008217E7 /* DetailViewController.swift in Sources */,
