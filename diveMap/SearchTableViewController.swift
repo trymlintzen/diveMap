@@ -39,6 +39,7 @@ class SearchTableViewController: UITableViewController , UISearchBarDelegate{
     @objc func resultSearchObservers(notification: NSNotification) {
         var DiveItemDict = notification.userInfo as! Dictionary<String , [DiveMapItems]>
         sites = DiveItemDict[dictKey.diveURLKey]!
+        self.tableView.reloadData()
         
        
     }
