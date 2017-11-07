@@ -11,19 +11,49 @@ import MapKit
 import CoreLocation
 import UIKit
 
+
+
 protocol MapSearch {
     func showDiveSiteSelected(diveSite: DiveMapItems)
 }
 
 
 class MapViewController: UIViewController, MKMapViewDelegate, MapSearch {
+
     
     func showDiveSiteSelected(diveSite: DiveMapItems) {
-        var coord = CLLocationCoordinate2D.init(latitude: diveSite.lat,
+        var annotations: [DiveMapAnnotation] = []
+        let coord = CLLocationCoordinate2D.init(latitude: diveSite.lat,
                                                 longitude: diveSite.lng)
+        
+        let annotation = DiveMapAnnotation.init(diveSite: diveSite,
+                                                coordinate: coord,
+                                                title: diveSite.name)
+        annotations.append(annotation)
+       
+        self.mapViewOutlet.showAnnotations(annotations, animated: true)
+        
+        DiveMapService.sharedInstance.getDiveMapInfo(lat: diveSite.lat,
+                                                     lng: diveSite.lng,
+                                                     dist: distances.distance25)
         self.setZoomInitialLocation(location: coord)
+        let mapOverlay = MKCircle (center: coord, radius: regionRadius)
+        mapViewOutlet.add(mapOverlay)
+       
     }
-
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay.isKind(of: MKCircle.self) {
+            
+            let view = MKCircleRenderer(overlay: overlay)
+            
+            view.fillColor = UIColor.blue.withAlphaComponent(0.1)
+            
+            return view
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
+    
     var diveItemsObjects: [DiveMapItems] = []
     var selectedDetailItem: DetailDiveSite?
     var locationManager = CLLocationManager()
@@ -31,7 +61,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapSearch {
     var searchController: UISearchController!
     var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     var loadingView: UIView = UIView()
-    
+    var regionRadius: CLLocationDistance = 12000
+    var mapOverlayes: [MKOverlay] = []
     var lastCoordinateTouched = CLLocationCoordinate2D()
     @IBOutlet weak var mapViewOutlet: MKMapView!
     
@@ -53,20 +84,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapSearch {
                                                selector: #selector(MapViewController.notifyDetailObservers(notification:)),
                                                name: NSNotification.Name(rawValue: notificationIDs.urlItemID),
                                                object: nil)
+    
         
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
+   
     @IBAction func LongPressLocation(_ sender: UILongPressGestureRecognizer) {
         guard sender.state == .began else { return }
         
         let touchLocation = sender.location(in: self.mapViewOutlet)
         let touchedCoordinate = mapViewOutlet.convert(touchLocation, toCoordinateFrom: self.mapViewOutlet)
+       
         
         // create an annotion point
+        
         droppedPin.title = "Dropped Pin"
         droppedPin.coordinate = touchedCoordinate
         
@@ -75,12 +106,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapSearch {
         droppedPinView.tintColor = UIColor.cyan
         
         // add the annotation that bleongs to the pin view in the map
+        self.mapViewOutlet.removeAnnotation(droppedPinView.annotation!)
         self.mapViewOutlet.addAnnotation(droppedPinView.annotation!)
+        
         
         DiveMapService.sharedInstance.getDiveMapInfo(lat: touchedCoordinate.latitude,
                                                      lng: touchedCoordinate.longitude,
                                                      dist: distances.distance25)
         setZoomInitialLocation(location: touchedCoordinate)
+        let mapOverlay = MKCircle (center: touchedCoordinate, radius: regionRadius)
+        mapViewOutlet.removeOverlays(self.mapViewOutlet.overlays)
+        self.mapViewOutlet.add(mapOverlay)
+
     }
     
     func setZoomInitialLocation(location: CLLocationCoordinate2D) {
@@ -159,7 +196,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapSearch {
             DetailDiveSiteMapService.sharedInstance.diveSearchDetail(id: mapAnnotation.diveSite.id)
         }
     }
-   
+    
     func setUPSearchBar () {
         let diveSearchTable = self.storyboard!.instantiateViewController(withIdentifier: "diveSearchID") as! SearchTableViewController
         diveSearchTable.delegate = self
@@ -171,20 +208,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapSearch {
         navigationItem.titleView = searchController?.searchBar
     }
     
-//    func isMoreThanTwoCharacter(_ searchBar: UISearchBar) -> Bool {
-//        return (searchBar.text?.characters.count)! >= 4
-//    }
-//
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if isMoreThanTwoCharacter(searchBar) {
-//            self.diveItemsObjects = []
-//            DiveMapService.sharedInstance.searchDiveMap(searchString: searchBar.text!)
-//            self.showActivityIndicator(loadingView: loadingView, spinner: spinner)
-//        }
-//    }
     
-
     
 }
 

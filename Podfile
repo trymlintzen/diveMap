@@ -17,5 +17,6 @@ target 'diveMap' do
     # Pods for testing
   end
 
-pod 'Alamofire' 
+pod 'Alamofire'
+
 end

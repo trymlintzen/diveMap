@@ -40,14 +40,13 @@ class SearchTableViewController: UITableViewController , UISearchBarDelegate{
         var DiveItemDict = notification.userInfo as! Dictionary<String , [DiveMapItems]>
         sites = DiveItemDict[dictKey.diveURLKey]!
         self.tableView.reloadData()
-        
-       
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        let selectedDiveSite = self.sites[indexPath.row]
         delegate?.showDiveSiteSelected(diveSite: selectedDiveSite)
         dismiss(animated: true, completion: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
